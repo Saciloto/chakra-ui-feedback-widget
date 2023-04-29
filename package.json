@@ -2,16 +2,16 @@
   "name": "chakra-ui-feedback-widget",
   "version": "0.0.1",
   "author": "Mauricio Valadares Saciloto <mauriciosaciloto@gmail.com>",
-  "description": "Simple and beautiful widget feedback button, using Chakra UI",
+  "description": "Simple and beautiful widget feedback button, using Chakra UI","repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saciloto/chakra-ui-feedback-widget.git"
+  },
   "type": "module",
   "keywords": [
     "chakra-ui",
     "react",
     "feedback",
     "widget"
-  ],
-  "files": [
-    "/dist"
   ],
   "scripts": {
     "dev": "vite",
