@@ -1,24 +1,36 @@
 {
   "name": "chakra-ui-feedback-widget",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": "Mauricio Valadares Saciloto <mauriciosaciloto@gmail.com>",
+  "description": "Simple and beautiful widget feedback button, using Chakra UI",
   "type": "module",
+  "keywords": [
+    "chakra-ui",
+    "react",
+    "feedback",
+    "widget"
+  ],
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "html2canvas": "^1.4.1",
+    "@iconify/react": "^4.1.0"
+  },
+  "peerDependencies": {
     "@chakra-ui/react": "^2.5.5",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "framer-motion": "^10.10.0",
-    "html2canvas": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@iconify/react": "^4.1.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",

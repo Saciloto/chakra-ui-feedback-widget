@@ -7,13 +7,11 @@ import {
   Button,
   Flex,
   FormControl,
-  FormLabel,
   HStack,
   Heading,
   IconButton,
   Image,
   Textarea,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { Icon } from "@iconify/react";
 
@@ -21,12 +19,14 @@ interface FeedbackTypeStepProps {
   feedbackType: FeedbackType;
   onFeedbackRestartRequested: () => void;
   onFeedbackSent: () => void;
+  onSubimitFeedback: (event: FormEvent) =>  Promise<void>
 }
 
 export function FeedbackContentStep({
   feedbackType,
   onFeedbackRestartRequested,
   onFeedbackSent,
+  onSubimitFeedback
 }: FeedbackTypeStepProps) {
   const [screenshot, setScreenshot] = useState<string | null>(null);
   const [comment, setComment] = useState("");
@@ -39,11 +39,14 @@ export function FeedbackContentStep({
 
     setIsSendingFeedback(true);
 
-    // await api.post("/feedbacks", {
-    //   type: feedbackType,
-    //   comment,
-    //   screenshot,
-    // });
+    /* **Your subimit to API e.g:
+     await api.post("/feedbacks", {
+      type: feedbackType,
+      comment,
+      screenshot,
+    });*/
+
+    await onSubimitFeedback(event);
 
     setIsSendingFeedback(false);
     onFeedbackSent();

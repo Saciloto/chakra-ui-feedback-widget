@@ -1,12 +1,15 @@
 import { Box, IconButton, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverFooter, PopoverTrigger, Portal, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { WidgetForm } from './WidgetForm'
 import { Icon } from '@iconify/react'
+import { FormEvent } from 'react'
 
-export function Widget() {
+export function Widget({onSubimitFeedback}:{onSubimitFeedback: (event: FormEvent) =>  Promise<void>}) {
   const { toggleColorMode } = useColorMode()
+  
   const icon = useColorModeValue('line-md:sunny-filled-loop-to-moon-filled-loop-transition',
     'line-md:moon-filled-to-sunny-filled-loop-transition')
-  return (
+    
+  return (  
     <Popover placement='top-start'>
       <PopoverTrigger>
         <IconButton
@@ -30,7 +33,7 @@ export function Widget() {
             mr={1}
           />
           <PopoverBody>
-            <WidgetForm />
+            <WidgetForm onSubimitFeedback={onSubimitFeedback}/>
           </PopoverBody>
           <PopoverFooter>
             <Box mt="auto" textAlign="center">

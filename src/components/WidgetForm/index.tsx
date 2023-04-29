@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { FeedbackTypeStep } from "./Steps/FeedbackTypeStep";
 import { FeedbackContentStep } from "./Steps/FeedbackContentStep";
 import { FeedbackSuccessStep } from "./Steps/FeedbackSuccessStep";
@@ -34,7 +34,7 @@ export const feedbackTypes = {
 
 export type FeedbackType = keyof typeof feedbackTypes;
 
-export function WidgetForm() {
+export function WidgetForm({onSubimitFeedback}:{onSubimitFeedback: (event: FormEvent) =>  Promise<void>}) {
   const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
   const [feedbackSent, setFeedbackSent] = useState(false);
   function handleRestartFeedback() {
@@ -55,6 +55,7 @@ export function WidgetForm() {
               feedbackType={feedbackType}
               onFeedbackRestartRequested={handleRestartFeedback}
               onFeedbackSent={() => setFeedbackSent(true)}
+              onSubimitFeedback={onSubimitFeedback}
             />
           )}
         </>
