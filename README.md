@@ -2,6 +2,8 @@
 
 Este pacote permite que você adicione um widget de feedback em seu projeto React utilizando ChakraUI para estilização. Com ele, os usuários poderão enviar feedback sobre bugs, sugestões e melhorias. Em breve, será adicionada a integração com envio de e-mail.
 
+Este projeto foi baseado em um curso da Rocketseat 🚀 . 
+
 ## Instalação
 
 Antes de instalar, certifique-se de ter o Node.js e o npm ou Yarn instalados.
