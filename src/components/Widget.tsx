@@ -3,13 +3,13 @@ import { WidgetForm } from './WidgetForm'
 import { Icon } from '@iconify/react'
 import { FormEvent } from 'react'
 
-export function Widget({onSubimitFeedback}:{onSubimitFeedback: (event: FormEvent) =>  Promise<void>}) {
+export function Widget({ onSubmitFeedback }: { onSubmitFeedback: (event: FormEvent) => Promise<void> }) {
   const { toggleColorMode } = useColorMode()
-  
+
   const icon = useColorModeValue('line-md:sunny-filled-loop-to-moon-filled-loop-transition',
     'line-md:moon-filled-to-sunny-filled-loop-transition')
-    
-  return (  
+
+  return (
     <Popover placement='top-start'>
       <PopoverTrigger>
         <IconButton
@@ -33,13 +33,13 @@ export function Widget({onSubimitFeedback}:{onSubimitFeedback: (event: FormEvent
             mr={1}
           />
           <PopoverBody>
-            <WidgetForm onSubimitFeedback={onSubimitFeedback}/>
+            <WidgetForm onSubmitFeedback={onSubmitFeedback} />
           </PopoverBody>
           <PopoverFooter>
             <Box mt="auto" textAlign="center">
               <Text fontSize="xs">
-                Feito com ♥ por{" "}
-                <Box as="a" href="https://rocketseat.com.br" textDecoration="underline" >
+                Feito com JS por{" "}
+                <Box as="a" href="https://github.com/Saciloto" textDecoration="underline" >
                   Mauricio
                 </Box>
                 <IconButton

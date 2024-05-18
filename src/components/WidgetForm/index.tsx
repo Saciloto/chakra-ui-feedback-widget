@@ -34,7 +34,7 @@ export const feedbackTypes = {
 
 export type FeedbackType = keyof typeof feedbackTypes;
 
-export function WidgetForm({onSubimitFeedback}:{onSubimitFeedback: (event: FormEvent) =>  Promise<void>}) {
+export function WidgetForm({onSubmitFeedback}:{onSubmitFeedback: (event: FormEvent) =>  Promise<void>}) {
   const [feedbackType, setFeedbackType] = useState<FeedbackType | null>(null);
   const [feedbackSent, setFeedbackSent] = useState(false);
   function handleRestartFeedback() {
@@ -55,7 +55,7 @@ export function WidgetForm({onSubimitFeedback}:{onSubimitFeedback: (event: FormE
               feedbackType={feedbackType}
               onFeedbackRestartRequested={handleRestartFeedback}
               onFeedbackSent={() => setFeedbackSent(true)}
-              onSubimitFeedback={onSubimitFeedback}
+              onSubmitFeedback={onSubmitFeedback}
             />
           )}
         </>

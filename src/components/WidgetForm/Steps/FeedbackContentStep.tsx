@@ -19,14 +19,14 @@ interface FeedbackTypeStepProps {
   feedbackType: FeedbackType;
   onFeedbackRestartRequested: () => void;
   onFeedbackSent: () => void;
-  onSubimitFeedback: (event: FormEvent) =>  Promise<void>
+  onSubmitFeedback: (event: FormEvent) =>  Promise<void>
 }
 
 export function FeedbackContentStep({
   feedbackType,
   onFeedbackRestartRequested,
   onFeedbackSent,
-  onSubimitFeedback
+  onSubmitFeedback
 }: FeedbackTypeStepProps) {
   const [screenshot, setScreenshot] = useState<string | null>(null);
   const [comment, setComment] = useState("");
@@ -39,14 +39,14 @@ export function FeedbackContentStep({
 
     setIsSendingFeedback(true);
 
-    /* **Your subimit to API e.g:
+    /* **Your submit to API e.g:
      await api.post("/feedbacks", {
       type: feedbackType,
       comment,
       screenshot,
     });*/
 
-    await onSubimitFeedback(event);
+    await onSubmitFeedback(event);
 
     setIsSendingFeedback(false);
     onFeedbackSent();
